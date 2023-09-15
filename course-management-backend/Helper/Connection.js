@@ -8,11 +8,7 @@ PASSWORD = process.env.DB_PASSWORD;
 CLUSTERURL = process.env.CLUSTERURL;
 
 function connection() {
-<<<<<<< HEAD
-  const MONGODB_URI = `mongodb://${USERNAME}:${PASSWORD}@${CLUSTERURL}/courses_app`;
-=======
-  const MONGODB_URI = `mongodb+srv://${USERNAME}:${PASSWORD}@${CLUSTERURL}/${DB}`;
->>>>>>> 73f0cbbc11443c1356460d4391c6ff7708bab9a8
+  const MONGODB_URI = `mongodb://${USERNAME}:${PASSWORD}@${CLUSTERURL}/${DB}`;
   mongoose.connect(MONGODB_URI);
 
   mongoose.connection.on("connected", () => {
