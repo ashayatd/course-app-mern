@@ -36,18 +36,6 @@ const Header = () => {
     Navigate("/cart");
   };
 
-  // useEffect = ()=> {
-  //   if(!isLoggedIn){
-  //     callauthService().then(auth=>{ // Auth - boolean
-  //       if(auth){
-  //         // set logged in true
-  //       } else {
-  //         // initiate logout
-  //       }
-  //     })
-  //   }
-  // }
-
   return (
     <header className="header-container">
       <div className="left-part">

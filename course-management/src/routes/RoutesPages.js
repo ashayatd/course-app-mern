@@ -42,7 +42,7 @@ const RoutesPages = () => {
         <Route path="/buycoin" element={<Buycoin/>} />
         <Route path="/razorpay" element={<Razorpay/>} /> 
         <Route path="/paymentsuccess" element={<Paymentsuccess/>} />
-        <Route path="/showcourse" element={<Showcourse/>} /> 
+        <Route path="/showcourse/:id" element={<Showcourse/>} /> 
         <Route element={<NotFound/>} />
       </Routes>
     </Router>

@@ -27,39 +27,39 @@ function Footer() {
                 <div className="w-col w-col-7 w-col-small-6 w-col-tiny-7">
                   <h3 className="footer-titles">Learn</h3>
                   <p className="footer-links">
-                    <a href="" target="_blank">
+                    <div href="" target="_blank">
                       <span className="footer-link">
                         Premium Courses
                         <br />
                       </span>
-                    </a>
-                    <a href="">
+                    </div>
+                    <div href="">
                       <span className="footer-link">
                         Free Courses
                         <br />
                       </span>
-                    </a>
-                    <a href="">
+                    </div>
+                    <div href="">
                       <span className="footer-link">Blog</span>
-                    </a>
+                    </div>
                     <span>
                       <br />
                     </span>
-                    <a href="">
+                    <div href="">
                       <span className="footer-link">
                         Entrepreneurial Tools
                         <br />
                       </span>
-                    </a>
-                    <a href="">
+                    </div>
+                    <div href="">
                       <span className="footer-link">
                         Startup News
                         <br />
                       </span>
-                    </a>
-                    <a href="">
+                    </div>
+                    <div href="">
                       <span className="footer-link">Podcast</span>
-                    </a>
+                    </div>
                     <strong>
                       <br />
                     </strong>
@@ -68,30 +68,30 @@ function Footer() {
                 <div className="w-col w-col-5 w-col-small-6 w-col-tiny-5">
                   <h3 className="footer-titles">Mentor?</h3>
                   <p className="footer-links">
-                    <a href="">
+                    <div href="">
                       <Link to="/sellerlogin" className="footer-link">
                         Mentor Login
                         <br />
                       </Link>
-                    </a>
-                    <a href="">
+                    </div>
+                    <div href="">
                       <Link to="/sellerregister" className="footer-link">
                         Mentor Register
                         <br />
                       </Link>
-                    </a>
-                    <a href="">
+                    </div>
+                    <div href="">
                       <span className="footer-link"></span>
-                    </a>
-                    <a href="">
+                    </div>
+                    <div href="">
                       <span className="footer-link">
                         Contribute
                         <br />
                       </span>
-                    </a>
-                    <a href="">
+                    </div>
+                    <div href="">
                       <span className="footer-link">FAQ</span>
-                    </a>
+                    </div>
                     <strong>
                       <br />
                     </strong>
@@ -101,7 +101,7 @@ function Footer() {
             </div>
             <div className="column-center-mobile w-col w-col-4">
               <h3 className="footer-titles">Follow Us!</h3>
-              <a
+              <div
                 href=""
                 target="_blank"
                 className="footer-social-network-icons w-inline-block"
@@ -111,8 +111,8 @@ function Footer() {
                   width="20"
                   alt="Twitter icon"
                 />
-              </a>
-              <a
+              </div>
+              <div
                 href=""
                 target="_blank"
                 className="footer-social-network-icons w-inline-block"
@@ -122,8 +122,8 @@ function Footer() {
                   width="20"
                   alt="Instagram icon"
                 />
-              </a>
-              <a
+              </div>
+              <div
                 href=""
                 target="_blank"
                 className="footer-social-network-icons w-inline-block"
@@ -133,8 +133,8 @@ function Footer() {
                   width="20"
                   alt="Facebook Icon"
                 />
-              </a>
-              <a
+              </div>
+              <div
                 href=""
                 target="_blank"
                 className="footer-social-network-icons w-inline-block"
@@ -144,8 +144,8 @@ function Footer() {
                   width="20"
                   alt="LinkedIn Icon"
                 />
-              </a>
-              <a
+              </div>
+              <div
                 href=""
                 target="_blank"
                 className="footer-social-network-icons w-inline-block"
@@ -156,14 +156,14 @@ function Footer() {
                   alt="Pinterest Icon"
                   className=""
                 />
-              </a>
+              </div>
               <p className="footer-description">
                 Email:{" "}
-                <a href="">
+                <div href="">
                   <strong className="link-email-footer">
                     course.factory@gmail.com
                   </strong>
-                </a>
+                </div>
                 <br />
               </p>
             </div>

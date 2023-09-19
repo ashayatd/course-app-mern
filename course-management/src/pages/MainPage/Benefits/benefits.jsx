@@ -1,6 +1,5 @@
 import React from "react";
 import "./benefits.css";
-import image3 from "../../../assets/benefits.png";
 import lottie from 'lottie-web';
 import { defineElement } from 'lord-icon-element';
 
@@ -11,7 +10,6 @@ const Benefits = () => {
     <React.Fragment>
       <h1 className="benefitHeading">
         Benefits Of&nbsp;<span> Choosing Us</span>  
-        <img alt="img" src={image3} className="benefit-image"/>
       </h1>
       
       <div className="mainGrid">

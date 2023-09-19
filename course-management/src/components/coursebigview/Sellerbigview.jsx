@@ -1,28 +1,60 @@
-import React, { useEffect, useState } from "react";
-import { useAuth } from "../../authentication/AuthContext";
+import React, {  useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router";
+import Header from "../../layouts/Header/Header";
+import Footer from "../../layouts/Footer/Footer";
 
 const SellerBigview = () => {
   const [courseData, setCourseData] = useState({
-    "title": "Introduction to Python Programming",
-    "imageLink": "https://i.postimg.cc/K3f93kVt/python-course.jpg",
-    "description": "Dive into the world of programming with our 'Introduction to Python Programming' course. Python is a versatile and beginner-friendly language used in web development, data analysis, and more. In this course, you'll learn the fundamentals of Python, including basic syntax, data types, control structures, functions, and modules. Whether you're a complete beginner or have some coding experience, this course will equip you with essential programming skills.",
-    "price": 49.99,
-    "language": "English",
-    "duration": 30,
-    "level": "Beginner",
-    "whatYoullLearn": [
-      "Basic Python syntax",
-      "Data types and variables",
-      "Control structures",
-      "Functions and modules"
-    ],
-    "category": "Programming",
-    "prerequisites": "No prior programming experience required.",
-    "createdBy": "John Doe",
-    "published": true
-  });
-  const { id } = useParams();
+    whatYoullLearn : []
+});
+
+const { id } = useParams();
+
+  useEffect(() => {
+
+    const fetchcourse = async ()=>{
+
+      try {
+        console.log("entered fetch course");
+        const resp = await fetch('http://localhost:5000/user/viewcourse', {
+          method: "POST",
+          body: JSON.stringify({id}),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      
+        if (resp.ok) {
+          console.log("Course Found");
+          const data = await resp.json();
+          console.log("course data", data.data);
+          setCourseTitle(data.data.title);
+          setCourseDescription(data.data.description);
+          setCourseCategory(data.data.category);
+          setCourseLanguage(data.data.language);
+          setCourseLevel(data.data.level);
+          setCourseDuration(data.data.duration);
+          setCourseImage(data.data.imageLink);
+          setCoursePrice(data.data.price);
+          setStatus(true);
+          setPrerequisites(data.data.prerequisites);
+          setInputValues(data.data.whatYoullLearn);
+          setCourseData(data.data);
+        }
+      
+        if (resp.status === 404) {
+          alert("Course not found");
+        }
+      
+      } catch (error) {
+        console.log("error in Sellerbigview", error);
+      }
+    }
+
+    fetchcourse();
+  }, [id]);
+
 
   const [courseTitle, setCourseTitle] = useState(courseData.title);
   const [courseDescription, setCourseDescription] = useState(courseData.description);
@@ -35,7 +67,6 @@ const SellerBigview = () => {
   const [status, setStatus] = useState(true);
   const [prerequisites, setPrerequisites] = useState(courseData.prerequisites);
   const [inputValues, setInputValues] = useState([...courseData.whatYoullLearn]);
-  const {user} = useAuth;
 
   const imageOptions = [
     "https://i.postimg.cc/K3f93kVt/image1.jpg",
@@ -91,9 +122,9 @@ const SellerBigview = () => {
     } else {
       try {
         const response = await fetch(
-          process.env.REACT_APP_API + "/seller/update-course",
+          "http://localhost:5000/seller/update-course",
           {
-            method: "POST",
+            method: "PUT",
             body: JSON.stringify({
                 CourseTitle:courseTitle ,
                 CourseDescription:courseDescription,
@@ -124,9 +155,9 @@ const SellerBigview = () => {
         }
 
         if (response.ok) {
-          alert("Registration successful");
+          alert("Updation successful");
         } else {
-          alert("Registration failed");
+          alert("Updation failed");
         }
       } catch (error) {
         alert("Error in creating course", error);
@@ -134,10 +165,11 @@ const SellerBigview = () => {
     }
   };
 
-  return (
+  return (<React.Fragment>
+    <Header/>
     <div className="mainSellerContainer">
       <h1 class="benefitHeading">
-        Create&nbsp;<span> Course</span>
+        Update&nbsp;<span> Course</span>
       </h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -299,7 +331,10 @@ const SellerBigview = () => {
         </div>
       </form>
     </div>
+    <Footer/>
+    </React.Fragment>
   );
+
 };
 
 export default SellerBigview;

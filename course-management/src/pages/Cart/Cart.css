@@ -13,7 +13,7 @@
 }
 .checkout-box{
   width: 20%;
-  justify-content: start;
+  justify-content: flex-start;
   display: flex;
   align-items: center;
   flex-direction: column;
