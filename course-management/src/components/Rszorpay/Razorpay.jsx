@@ -24,7 +24,7 @@ async function displayRazorpay () {
         return 
       }
 
-      const data = await fetch('http://localhost:5000/razorpay', {method: 'POST'}).then((t) => 
+      const data = await fetch(process.env.REACT_APP_API + '/razorpay', {method: 'POST'}).then((t) => 
         t.json()
       ) 
 

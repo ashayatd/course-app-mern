@@ -39,7 +39,7 @@ const SellerRegister = () => {
     );
 
     try {
-      const response = await fetch('http://localhost:5000/seller/seller-register', {
+      const response = await fetch( process.env.REACT_APP_API + '/seller/seller-register', {
         method: "POST",
         body: JSON.stringify({
           Name: name,

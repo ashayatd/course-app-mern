@@ -17,7 +17,7 @@ const { id } = useParams();
 
       try {
         console.log("entered fetch course");
-        const resp = await fetch('http://localhost:5000/user/viewcourse', {
+        const resp = await fetch(process.env.REACT_APP_API+'/user/viewcourse', {
           method: "POST",
           body: JSON.stringify({id}),
           headers: {
@@ -122,7 +122,7 @@ const { id } = useParams();
     } else {
       try {
         const response = await fetch(
-          "http://localhost:5000/seller/update-course",
+          process.env.REACT_APP_API + "/seller/update-course",
           {
             method: "PUT",
             body: JSON.stringify({

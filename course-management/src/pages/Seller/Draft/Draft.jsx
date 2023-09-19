@@ -15,7 +15,7 @@ function ActiveCourses() {
       console.log("entered fetch in active course")
       try {
         const response = await fetch(
-          "http://localhost:5000/seller/seller-dashboard",
+          process.env.REACT_APP_API + "/seller/seller-dashboard",
           {
             method: "POST",
             headers: {

@@ -15,7 +15,7 @@ function Login() {
   const userloginApi = async () => {
 
     try {
-      const response = await fetch("http://localhost:5000/user/userlogin", {
+      const response = await fetch(process.env.REACT_APP_API + "/user/userlogin", {
         method: "POST",
         body: JSON.stringify({
           data: {
@@ -82,7 +82,7 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="loginSignup">Dont have account?&nbsp;<Link to={'/sellerregister'}>Signup</Link></div>
+          <div className="loginSignup">Dont have account?&nbsp;<Link to={'/register'}>Signup</Link></div>
 
           <button onClick={userloginApi} 
           class="seller-register-button">Login</button>

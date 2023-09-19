@@ -65,12 +65,12 @@ const Registration = () => {
 
   return (
     <React.Fragment>
-      <div className="container">
+      <div className="container-user-register">
       <div className="registration-box">
       <h1 className="login-heading">
             User&nbsp;<span> Registration</span>
           </h1>
-          <div className="userLogin">Already a user?&nbsp;<Link to={'/login'}>Login</Link></div>
+          <div className="userLogin">Already a user?&nbsp;<Link to={'/userlogin'}>Login</Link></div>
         <form className="formData">
           <div className="input-field">
             <label htmlFor="name" className="registerlabel">*Name</label>

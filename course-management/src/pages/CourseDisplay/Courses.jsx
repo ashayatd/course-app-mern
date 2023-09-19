@@ -28,7 +28,7 @@ function Courses() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/courses/displaycourses",
+          process.env.REACT_APP_API +"/courses/displaycourses",
           {
             method: "GET",
             headers: {

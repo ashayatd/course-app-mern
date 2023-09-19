@@ -16,7 +16,7 @@ function Login() {
     console.log("SellerLogin");
     try {
       let response = await fetch(
-        "http://localhost:5000/seller/seller-login",
+        process.env.REACT_APP_API + "/seller/seller-login",
         {
           method: "POST",
           body: JSON.stringify({
@@ -84,7 +84,7 @@ function Login() {
             />
           </div>
           <div className="loginSignup">
-            Not a Seller?&nbsp;<Link to={"/register"}>Signup</Link>
+            Not a Seller?&nbsp;<Link to={"/sellerregister"}>Signup</Link>
           </div>
 
           <button onClick={handleLogin} class="seller-register-button">
