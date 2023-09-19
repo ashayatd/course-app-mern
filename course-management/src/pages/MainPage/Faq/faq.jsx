@@ -51,7 +51,7 @@ function Faq() {
     <React.Fragment>
       <div className="faqMaindiv">
         <div className="img_part">
-          <img src={image1} className="faq_logo" alt="image" />
+          <img src={image1} className="faq_logo" alt="img" />
         </div>
 
         <div className="faqheading">
@@ -67,7 +67,7 @@ function Faq() {
             <img
               src={image2}
               style={{ width: "368px", position: "absolute", right: "219px" }}
-              alt="image"
+              alt="img"
             />
           </div>
 

@@ -3,7 +3,7 @@ import React from 'react'
 function NotFound() {
   return (
     <div>
-      <img src='https://blog.thomasnet.com/hs-fs/hubfs/shutterstock_774749455.jpg?width=900&name=shutterstock_774749455.jpg'/>
+      <img alt='img' src='https://blog.thomasnet.com/hs-fs/hubfs/shutterstock_774749455.jpg?width=900&name=shutterstock_774749455.jpg'/>
     </div>
   )
 }

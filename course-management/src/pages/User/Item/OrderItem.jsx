@@ -53,7 +53,7 @@ function Buyitem() {
     };
 
     fetchData(); // Call the fetchData function
-  }, []);
+  }, [id]);
 
 
 
@@ -75,7 +75,6 @@ function Buyitem() {
             "Content-Type": "application/json",
           },
         });
-        const data = await resp.json();
         console.log("Response Of buy");
 
         if (resp.status === 403) {

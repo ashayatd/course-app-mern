@@ -14,12 +14,11 @@ function CourseBigView() {
   const dispatch = useDispatch();
   const { isLoggedIn, user } = useAuth();
   const { id } = useParams();
-  console.log(id);
   const [data, setData] = useState(false);
   const [sellerName, setSellerName] = useState();
 
   const Navigate = useNavigate();
-  const [course, setCourse] = useState({});
+  const [course, setCourse] = useState([]);
 
   const handleAddcart = () => {
     if (isLoggedIn === true) {
@@ -107,8 +106,8 @@ function CourseBigView() {
         const data = await response.json();
         console.log("Single Course", data);
   
-        if (response.status === 401) {
-          alert("Invalid Credentials");
+        if (response.status === 404) {
+          alert("Course Not found");
         }
   
         if (response.ok) {
@@ -140,14 +139,14 @@ function CourseBigView() {
             },
           }
         );
-  
+
         if (fetchsellerName.status === 404) {
           console.log("Seller Name not found");
         }
         
         if (fetchsellerName.status === 200) {
           const senm = await fetchsellerName.json();
-          console.log(senm);
+          console.log(senm);  
           setSellerName(senm.SellerName);
         }
       } catch (error) {
@@ -158,7 +157,7 @@ function CourseBigView() {
     // Start by calling fetchData
     fetchData();
   
-  }, []);
+  }, [id]);
   
   
 

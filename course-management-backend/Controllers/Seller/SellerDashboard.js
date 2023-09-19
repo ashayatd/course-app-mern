@@ -2,14 +2,14 @@ const Courses = require("../../Models/Courses");
 
 const SellerDashboard = async (req, res) => {
   try {
-    const { id } = req.query.id;
-    console.log(JSON.stringify(id));
+    const id  = req.body.courseId;
+    console.log("seller dashboard single course", id);
 
     if (!id) {
       return res.status(400).json({ message: "No Seller Found" }); // Bad Request
     }
 
-    const SellerCourses = await Courses.find({ CreatedBy: id });
+    const SellerCourses = await Courses.find({ createdBy: id });
     console.log(SellerCourses);
     if (SellerCourses.length === 0) {
       return res.status(404).json({ message: "Courses Not Found" });

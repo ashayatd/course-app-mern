@@ -5,7 +5,7 @@ import Footer from "../../layouts/Footer/Footer";
 
 function Coursedisplay({ title, description, price, imageLink, createdBy }) {
   const [showPopup, setShowPopup] = useState(false);
-  const [userdata, setUserdata] = useState({
+  const [userdata] = useState({
     title: "3D Designing",
     description:
       "This is the description of 3D created course This is the description of 3D created cours This is the description of 3D created cours This is the description of 3D created cours",

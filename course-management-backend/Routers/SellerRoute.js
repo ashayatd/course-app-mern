@@ -19,7 +19,7 @@ Route.post('/seller-Login', Login);
 Route.post('/sellername', Sellername);
 Route.post('/sellerprofile', Sellerprofile);
 Route.post('/create-course', CreateCourse);
-Route.get('/seller-dashboard', SellerDashboard);
+Route.post('/seller-dashboard', SellerDashboard);
 Route.put('/update-course', UpdateCourse);
 Route.post('/seller-profile-form', SellerProfileForm);
 

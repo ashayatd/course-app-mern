@@ -137,7 +137,7 @@ transition: 200ms;
 .tc-check{
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .checkbox{
   width: 2%;
